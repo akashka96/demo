@@ -12,7 +12,6 @@
     z-index: 1; }
 
 #content {
-  height: 40vh;
   z-index: 10;
   position: relative;
   background-color: #fff; }

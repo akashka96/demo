@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel="stylesheet", href="css/test.css")
+        
+    body
+        .jumbotron(itemscope)
+            .jumbotron-content
+                h1.display-4(itemprop="heroTitle") Hello, world!
+                p.lead(itemprop="heroContent")
+                    | This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light.sticky-top(itemscope)
+            a.navbar-brand(href='#',itemprop=brand) Navbar
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarNavDropdown.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item.active
+                        a.nav-link(href='#')
+                            | Home 
+                            span.sr-only (current)
+                    li.nav-item
+                        a.nav-link(href='#') Features
+                    li.nav-item
+                        a.nav-link(href='#') Pricing
+                    li.nav-item.dropdown
+                        a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Dropdown link
+                        .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+                            a.dropdown-item(href='#') Action
+                            a.dropdown-item(href='#') Another action
+                            a.dropdown-item(href='#') Something else here
+
+        #main
+        
+            h2#about About Us
+
+            p 
+            | We help you create your memmories. We focus on framing the best moments in your life.
+            | We ensure you an incredible service without compromising quality
+            
+            h2#services Services
+                
+                
+            .bs-example
+                #accordionExample.accordion
+                    .card
+                        #headingOne.card-header
+                            h2.mb-0
+                            button.btn.btn-link(type='button', data-toggle='collapse', data-target='#collapseOne')
+                                i.fa.fa-plus
+                                |  Portfolio shoots
+                        #collapseOne.collapse.show(aria-labelledby='headingOne', data-parent='#accordionExample')
+                            .card-body
+                                | HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. 
+                                a(href='https://www.tutorialrepublic.com/html-tutorial/', target='_blank') Learn more.
+                    .card
+                        #headingTwo.card-header
+                            h2.mb-0
+                            button.btn.btn-link.collapsed(type='button', data-toggle='collapse', data-target='#collapseTwo')
+                                i.fa.fa-plus
+                                |  Post Wedding 
+                        #collapseTwo.collapse(aria-labelledby='headingTwo', data-parent='#accordionExample')
+                            .card-body
+                                | Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. 
+                                a(href='https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/', target='_blank') Learn more.
+                    .card
+                        #headingThree.card-header
+                            h2.mb-0
+                            button.btn.btn-link.collapsed(type='button', data-toggle='collapse', data-target='#collapseThree')
+                                i.fa.fa-plus
+                                |  Photo Manipulation
+                        #collapseThree.collapse(aria-labelledby='headingThree', data-parent='#accordionExample')
+                            .card-body
+                                | CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. 
+                                a(href='https://www.tutorialrepublic.com/css-tutorial/', target='_blank') Learn more.
+        #slider
+            h2#gallery Gallery
+            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                ol.carousel-indicators
+                    li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='1')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='2')
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100(src='img/moon.jpg', alt='First slide')
+                    .carousel-item
+                        img.d-block.w-100(src='img/DSC_0685.jpg', alt='Second slide')
+                    .carousel-item
+                        img.d-block.w-100(src='img/port4.jpg', alt='Third slide')
+                a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+
+        button.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModal', data-whatever='akashkavanal@gmail.com') Mail me 
+        #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                .modal-dialog(role='document')
+                    .modal-content
+                        .modal-header
+                            h5#exampleModalLabel.modal-title New message
+                            button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') ×
+                        .modal-body
+                            form
+                            .form-group
+                                label.col-form-label(for='recipient-name') Recipient:
+                                input#recipient-name.form-control(type='text')
+                            .form-group
+                                label.col-form-label(for='message-text') Message:
+                                textarea#message-text.form-control
+                        .modal-footer
+                            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                            button.btn.btn-primary(type='button') Send message
+           
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+        script(src="js/demo.js")
+        
+        
+
+       
+        

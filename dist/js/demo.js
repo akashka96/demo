@@ -1,24 +1,17 @@
 "use strict";
 
-var header = document.getElementById("header");
-var navBar = document.getElementById("navbar");
-var bg = document.getElementById("bg");
-var navbarHeight = navBar.offsetHeight;
-var headerHeight = header.offsetHeight;
-header.style.height = screen.height - navbarHeight;
+$(window).scroll(function (e) {
+  parallax();
+});
 
-function initParallax() {
-  if (window.pageYOffset > headerHeight) {
-    navBar.style.position = "fixed";
-  } else {
-    navBar.style.position = "absolute";
-    navBar.style.top = "0";
-  }
-
-  bg.style.top = window.pageYOffset / 6 + "px";
+function parallax() {
+  var scrolled = $(window).scrollTop();
+  $('.jumbotron').css('top', scrolled * 0.0150 + 'rem'); //PARALLAX INSIDE
+  //$('.jumbotron > .jumbotron-content').css('top',-(scrolled*-0.040)+'rem');
+  //$('.jumbotron > .jumbotron-content').css('opacity',1-(scrolled*.00275));
 }
 
-window.addEventListener("scroll", initParallax);
+;
 $(document).ready(function () {
   // Add minus icon for collapse element which is open by default
   $(".collapse.show").each(function () {
